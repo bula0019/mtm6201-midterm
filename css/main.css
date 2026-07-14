@@ -121,6 +121,9 @@ nav {
     margin-bottom: 2rem;
 }
 
+
+/* BUTTON STYLES */
+
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -129,11 +132,43 @@ nav {
     text-decoration: none;
     font-family: var(--body-font);
     font-weight: bold;
-    transition: .3s;
+    border: 2px solid transparent;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
-.btn:hover,
-.btn:focus {
+/* Light button */
+.btn-light {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-light:hover,
+.btn-light:focus {
     background: var(--gold);
     color: white;
+}
+
+/* Dark button */
+.btn-dark {
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+    background: var(--gold);
+    color: white;
+}
+
+/* Outline button */
+.btn-outline {
+    background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background: var(--white);
+    color: var(--black);
 }

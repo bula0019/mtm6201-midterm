@@ -42,21 +42,24 @@ header {
     margin: 0 auto;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo img {
     width: 180px;
     display: block;
 }
 
+/* NAV LINKS */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -75,8 +78,97 @@ nav {
     transition: 0.3s ease-in-out;
 }
 
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-/* HERO */
+    .logo img {
+        width: 170px;
+    }
+
+    .nav-links {
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .wrapper {
+        max-width: 1200px;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .nav-links {
+        gap: 2.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+}
+
+.eyebrow {
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.center {
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    font-size: 1.375rem;
+    margin: 1rem 0 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.375rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+
+/* HERO SECTION */
 
 .hero {
     position: relative;
@@ -84,7 +176,7 @@ nav {
 
 .hero img {
     width: 100%;
-    height: 650px;
+    height: 550px;
     object-fit: cover;
 }
 
@@ -109,18 +201,298 @@ nav {
 
 .hero h1 {
     font-family: var(--heading-font);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
-    line-height: 1.8;
-    margin-bottom: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .hero p {
     font-family: var(--body-font);
-    line-height: 1.8;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%)
+    }
+}
+
+@media (min-width: 768px) {
+    .hero img {
+        height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero img {
+        height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 3.87rem;
+        line-height: 1.15;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+}
+
+/* EXPERIENCE SECTION */
+
+.experience {
+    padding: 4rem 0;
+}
+
+.experience-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.experience-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.gallery-main {
+    grid-column: 1 / -1;
+    height: 320px;
+}
+
+@media (min-width: 768px) {
+    .experience-gallery {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-main {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        height: 100%;
+    }
+
+    .experience-gallery img:not(.gallery-main) {
+        height: 100%;
+    }
+}
+
+/* OFFER SECTION */
+
+.offer {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.offer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2.5rem;
+}
+
+.offer-card {
+    flex: 1 1 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.offer-card img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.25rem;
+}
+
+.offer-card h3 {
+    margin-top: 0;
+}
+
+.offer-card p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+@media (min-width: 768px) {
+    .offer-card {
+        flex: 1 1 calc(50% - 3rem);
+        max-width: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .offer-card {
+        flex: 1 1 0;
+    }
+}
+
+/* PROMO SECTION */
+
+.promo {
+    position: relative;
+    background: url("../images/coffee-shop.jpeg") center/cover no-repeat;
+    padding: 4rem 0;
+}
+
+.promo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.promo-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: var(--white);
+}
+
+.promo-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.promo-block .eyebrow {
+    color: var(--gold);
+}
+
+@media (min-width: 1024px) {
+    .promo-grid {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .promo-block {
+        flex: 1;
+    }
+
+    .promo-block h2 {
+        font-size: 2rem;
+    }
+}
+
+/* STORY SECTION */
+
+.story {
+    padding: 4rem 0;
+}
+
+.story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.story-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.story-content p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+@media (min-width: 1024px) {
+    .story-grid {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .story-grid img,
+    .story-content {
+        flex: 1;
+    }
+
+    .story-grid img {
+        height: auto;
+    }
+
+    .story-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+    background: var(--black);
+    color: var(--white);
+    padding: 4rem 0;
+}
+
+.testimonials .eyebrow {
+    color: var(--gold);
+}
+
+.testimonials h2 {
+    color: var(--white);
+}
+
+.testimonial-list {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.testimonial-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card blockquote {
+    margin: 0 0 1rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.testimonial-card .author {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+@media (min-width: 1024px) {
+    .testimonial-list {
+        flex-direction: row;
+    }
+
+    .testimonial-card {
+        flex: 1;
+    }
+}
 
 /* BUTTON STYLES */
 
@@ -171,4 +543,13 @@ nav {
 .btn-outline:focus {
     background: var(--white);
     color: var(--black);
+}
+
+/* FOOTER */
+footer {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
 }

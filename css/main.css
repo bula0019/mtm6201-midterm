@@ -410,7 +410,9 @@ p {
 .promo {
     position: relative;
     background: url("../images/coffee-shop.jpeg") center/cover no-repeat;
-    padding: 3rem 0;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
 }
 
 .promo::before {
@@ -503,6 +505,10 @@ p {
         flex-direction: column;
         justify-content: center;
         padding-left: 2rem;
+    }
+
+    .story .btn {
+        align-self: flex-start;
     }
 
     .story-grid img {
